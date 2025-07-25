@@ -1,28 +1,76 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import React, { JSX } from 'react';
+import { enableScreens } from 'react-native-screens';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import {
+    VeniceblogStreets,
+    VeniceinfoStreets,
+    VeniceloadStreets,
+    VenicemapStreets,
+    VenicereadblogStreets,
+    VenicereadplaceStreets,
+    VenicerecommendStreets,
+    VenicesavedStreets
+} from './VeniceStreets/venicecmns/Venicescrnsstreets';
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+export type RootStackParamList = {
+    VeniceblogStreets: undefined;
+    VeniceloadStreets: undefined;
+    VeniceinfoStreets: undefined;
+    VenicemapStreets: undefined;
+    VenicereadblogStreets: undefined;
+    VenicereadplaceStreets: undefined;
+    VenicerecommendStreets: undefined;
+    VenicesavedStreets: undefined;
+};
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+enableScreens();
+
+const Stack = createStackNavigator<RootStackParamList>();
+
+function App(): JSX.Element {
 
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
+      <NavigationContainer>
+            <Stack.Navigator
+                initialRouteName="VeniceloadStreets"
+                screenOptions={{ headerShown: false }}
+            >
+                <Stack.Screen
+                    name="VeniceblogStreets"
+                    component={VeniceblogStreets}
+                />
+                <Stack.Screen
+                    name="VeniceloadStreets"
+                    component={VeniceloadStreets}
+                />
+                <Stack.Screen
+                    name="VeniceinfoStreets"
+                    component={VeniceinfoStreets}
+                />
+                <Stack.Screen
+                    name="VenicemapStreets"
+                    component={VenicemapStreets}
+                />
+                <Stack.Screen
+                    name="VenicereadblogStreets"
+                    component={VenicereadblogStreets}
+                />
+                <Stack.Screen
+                    name="VenicereadplaceStreets"
+                    component={VenicereadplaceStreets}
+                />
+                <Stack.Screen
+                    name="VenicerecommendStreets"
+                    component={VenicerecommendStreets}
+                />
+                <Stack.Screen
+                    name="VenicesavedStreets"
+                    component={VenicesavedStreets}
+                />
+            </Stack.Navigator>
+      </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 export default App;
