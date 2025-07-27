@@ -4,14 +4,14 @@ workflows:
     max_build_duration: 120
     instance_type: mac_mini_m1
     integrations:
-      app_store_connect: Venice Streets API key
+      app_store_connect: Whispers Venice Streets API key
     environment:
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: com.whispersOf.venice.streets.2025
+        bundle_identifier: com.whispers.of.venice.streets.2025
       vars:
-        APP_STORE_APPLE_ID: 6749139427
-        BUNDLE_ID: 'com.whispersOf.venice.streets.2025'
+        APP_STORE_APPLE_ID: 6749207498
+        BUNDLE_ID: 'com.whispers.of.venice.streets.2025'
         XCODE_WORKSPACE: 'WhispersOfVeniceStreets.xcworkspace'
         XCODE_SCHEME: 'WhispersOfVeniceStreets'
     scripts:
